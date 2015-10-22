@@ -8,27 +8,28 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.blankoinc.blanko.MainActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
-            android:name=".SplashActivity"
+            android:name="com.blankoinc.blanko.SplashActivity"
             android:label="@string/title_activity_splash"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <activity
-            android:name=".WelcomeActivity"
+            android:name="com.blankoinc.blanko.WelcomeActivity"
             android:label="@string/title_activity_welcome"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name="com.blankoinc.blanko.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
