@@ -14,6 +14,9 @@ public class WelcomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+        signInButton = (ImageButton) findViewById(R.id.sign_in_button);
+        signUpButton = (ImageButton) findViewById(R.id.sign_up_button);
+        email = (EditText) findViewById(R.id.Email);
+        pass = (EditText) findViewById(R.id.Pass);
     }
-
 }
