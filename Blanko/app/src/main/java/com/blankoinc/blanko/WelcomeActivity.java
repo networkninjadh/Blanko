@@ -17,6 +17,7 @@ public class WelcomeActivity extends Activity {
         setContentView(R.layout.activity_welcome);
         signInButton = (ImageButton) findViewById(R.id.sign_in_button);
         signUpButton = (ImageButton) findViewById(R.id.sign_up_button);
+<<<<<<< HEAD
         email   = (EditText)findViewById(R.id.Email);
         pass    = (EditText)findViewById(R.id.Pass);
     }
@@ -29,6 +30,9 @@ public class WelcomeActivity extends Activity {
     private void signUp()
     {
 
+=======
+        email = (EditText) findViewById(R.id.Email);
+        pass = (EditText) findViewById(R.id.Pass);
+>>>>>>> ed10845bd14b1d288ea712eca6530551293f8437
     }
-
 }
