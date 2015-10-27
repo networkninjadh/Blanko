@@ -1,6 +1,7 @@
 package com.blankoinc.blanko;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -14,6 +15,20 @@ public class WelcomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+        signInButton = (ImageButton) findViewById(R.id.sign_in_button);
+        signUpButton = (ImageButton) findViewById(R.id.sign_up_button);
+        email   = (EditText)findViewById(R.id.Email);
+        pass    = (EditText)findViewById(R.id.Pass);
+    }
+    private void signIn()
+    {
+        Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    private void signUp()
+    {
+
     }
 
 }

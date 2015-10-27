@@ -16,17 +16,19 @@
         </activity>
         <activity
             android:name="com.blankoinc.blanko.SplashActivity"
-            android:label="@string/title_activity_splash"
+            android:label="Blanko"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-        </activity>
-        <activity
-            android:name="com.blankoinc.blanko.WelcomeActivity"
-            android:label="@string/title_activity_welcome"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.blankoinc.blanko.WelcomeActivity"
+            android:label="@string/title_activity_welcome"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:parentActivityName=".SplashActivity">
+
         </activity>
         <activity
             android:name="com.blankoinc.blanko.LoginActivity"
