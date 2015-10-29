@@ -7,6 +7,8 @@
     <string name="title_activity_welcome">WelcomeActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="splash_screen">splash screen</string>
-    <string name="email" ><strong>[Email]</strong></string>
-    <string name="pass" ><strong>[Password]</strong></string>
+    <string name="email" >[Email]</string>
+    <string name="pass" >[Password]</string>
+    <string name="name" >[Name]</string>
+    <string name="robonum" >[Robot #]</string>
 </resources>

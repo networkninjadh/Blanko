@@ -22,6 +22,11 @@ public class WelcomeActivity extends Activity {
     }
     public void signIn()
     {
+<<<<<<< HEAD
+=======
+        Intent intent = new Intent(WelcomeActivity.this, RegisterActivity.class);
+        startActivity(intent);
+>>>>>>> 3922770b6e551d7a26229cdaaa4044c2159ca9a4
     }
 
     public void signUp()
