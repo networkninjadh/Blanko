@@ -22,7 +22,7 @@ public class WelcomeActivity extends Activity {
     }
     private void signIn()
     {
-        Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
+        Intent intent = new Intent(WelcomeActivity.this, RegisterActivity.class);
         startActivity(intent);
     }
 

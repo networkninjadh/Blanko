@@ -31,7 +31,7 @@
 
         </activity>
         <activity
-            android:name="com.blankoinc.blanko.LoginActivity"
+            android:name=".RegisterActivity"
             android:label="@string/title_activity_login"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
