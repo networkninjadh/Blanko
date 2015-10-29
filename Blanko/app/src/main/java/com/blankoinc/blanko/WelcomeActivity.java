@@ -20,14 +20,14 @@ public class WelcomeActivity extends Activity {
         email   = (EditText)findViewById(R.id.Email);
         pass    = (EditText)findViewById(R.id.Pass);
     }
-    private void signIn()
+    public void signIn()
     {
-        Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
-        startActivity(intent);
     }
 
-    private void signUp()
+    public void signUp()
     {
-
+        //starts the register activity
+        Intent intent = new Intent(WelcomeActivity.this, RegisterActivity.class);
+        startActivity(intent);
     }
 }

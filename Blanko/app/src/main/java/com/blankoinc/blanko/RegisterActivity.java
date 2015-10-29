@@ -3,12 +3,12 @@ package com.blankoinc.blanko;
 import android.os.Bundle;
 import android.app.Activity;
 
-public class LoginActivity extends Activity {
+public class RegisterActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
     }
 
 }
