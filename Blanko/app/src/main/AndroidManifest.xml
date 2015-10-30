@@ -11,13 +11,14 @@
             android:name="com.blankoinc.blanko.MainActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:screenOrientation="portrait">
+            android:screenOrientation="landscape">
 
         </activity>
         <activity
             android:name="com.blankoinc.blanko.SplashActivity"
             android:label="Blanko"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -27,6 +28,7 @@
             android:name="com.blankoinc.blanko.WelcomeActivity"
             android:label="@string/title_activity_welcome"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait"
             android:parentActivityName=".SplashActivity">
 
         </activity>
@@ -34,7 +36,8 @@
             android:name=".RegisterActivity"
             android:label="@string/title_activity_login"
             android:parentActivityName=".WelcomeActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
