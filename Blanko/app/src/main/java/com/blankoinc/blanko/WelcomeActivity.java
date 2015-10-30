@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,6 +39,10 @@ public class WelcomeActivity extends Activity {
     }
     public void signIn() {
         checkInput();
+        if (emailString.equals("networkninjadh@gmail.com") && passString.equals("Papayaland.123")) { //Built in admin username and password
+            Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void signUp() {
@@ -46,6 +51,7 @@ public class WelcomeActivity extends Activity {
         startActivity(intent);
     }
     public void checkInput(){
+        //all code for checking the validity of the input goes here
         emailString = email.getText().toString();
         passString = pass.getText().toString();
         if (emailString.trim().length() <= 0) // the string is empty

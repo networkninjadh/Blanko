@@ -1,10 +1,14 @@
 package com.blankoinc.blanko;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class RegisterActivity extends Activity {
     ImageButton signUpButton;
@@ -20,37 +24,56 @@ public class RegisterActivity extends Activity {
         email   = (EditText)findViewById(R.id.Email);
         pass    = (EditText)findViewById(R.id.Pass);
         robonum   = (EditText)findViewById(R.id.Robonum);
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signUp();
+            }
+        });
+    }
+
+    public void signUp(){
+        //all code for registering goes in here
+        checkInput();
+    }
+    public void checkInput(){
+        //all code for checking the validity of the input goes in here
         emailString = email.getText().toString();
         nameString = name.getText().toString();
         passString = pass.getText().toString();
         robonumString = robonum.getText().toString();
+        if (emailString.trim().length() <=0)
+        {
+            createDialog("Please Enter an Email!");
+        }
+        if (nameString.trim().length() <=0)
+        {
+            createDialog("Please Enter Your Name!");
+        }
+        if (passString.trim().length() <=0)
+        {
+            createDialog("Please Enter a Password!");
+        }
+        if (robonumString.trim().length() <=0)
+        {
+            createDialog("Please Enter your Robot's ID Number");
+        }
     }
-    public boolean checkInput(){
-        boolean inputValid = true;
-        if (emailString == null)
-        {
-            //replace with a custom dialog box
-            Toast.makeText(this, "Please enter an email", Toast.LENGTH_SHORT);
-            inputValid = false;
-        }
-        if (nameString == null)
-        {
-            //replace with a custom dialog box
-            Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT);
-            inputValid = false;
-        }
-        if (passString == null)
-        {
-            //replace with a custom dialog box
-            Toast.makeText(this, "Please enter a password", Toast.LENGTH_SHORT);
-            inputValid = false;
-        }
-        if (robonumString == null)
-        {
-            //replace with a custom dialog box
-            Toast.makeText(this, "Please enter the robot number", Toast.LENGTH_SHORT);
-            inputValid = false;
-        }
-        return inputValid;
+    public void createDialog(String message){
+        final Dialog dialog = new Dialog(RegisterActivity.this);
+        dialog.setContentView(R.layout.custom_dialog);
+        dialog.setTitle("Alert");
+        TextView text = (TextView)dialog.findViewById(R.id.text);
+        text.setText(message);
+        ImageView image = (ImageView)dialog.findViewById(R.id.image);
+        image.setImageResource(R.drawable.ic_launcher);
+        Button dialogButton = (Button)dialog.findViewById(R.id.dialogButtonOK);
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 }
