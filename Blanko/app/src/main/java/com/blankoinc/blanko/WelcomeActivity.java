@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,10 +37,16 @@ public class WelcomeActivity extends Activity {
         });
     }
     public void signIn() {
-        checkInput();
-        if (emailString.equals("networkninjadh@gmail.com") && passString.equals("Papayaland.123")) { //Built in admin username and password
+        if (emailString == null || passString == null)
+            checkInput();
+        else if (emailString.equals("abc") && passString.equals("123")) { //Built in admin username and password
             Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
             startActivity(intent);
+        }
+        else
+        {
+            if (checkInput())
+                login(emailString, passString);
         }
     }
 
@@ -50,18 +55,22 @@ public class WelcomeActivity extends Activity {
         Intent intent = new Intent(WelcomeActivity.this, RegisterActivity.class);
         startActivity(intent);
     }
-    public void checkInput(){
+    public boolean checkInput(){
         //all code for checking the validity of the input goes here
         emailString = email.getText().toString();
         passString = pass.getText().toString();
+        boolean inputValid = true;
         if (emailString.trim().length() <= 0) // the string is empty
         {
            createDialog("Please Enter an Email Address!");
+            inputValid = false;
         }
         if (passString.trim().length() <= 0) // the string is empty
         {
             createDialog("Please Enter a Password!");
+            inputValid = false;
         }
+        return inputValid;
     }
     public void createDialog(String message){
         final Dialog dialog = new Dialog(WelcomeActivity.this);
@@ -79,5 +88,9 @@ public class WelcomeActivity extends Activity {
             }
         });
         dialog.show();
+    }
+    private void login(final String emailadress, final String password)
+    {
+        //todo later
     }
 }
