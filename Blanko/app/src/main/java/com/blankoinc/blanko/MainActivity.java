@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
     ImageButton upButton, downButton, leftButton, rightButton,
-            laserButton, dockingButton, powerButton, lightButton, videoButton, drawerButton;
+            laserButton, dockingButton, powerButton, lightButton, videoButton, nightButton, drawerButton;
     SlidingDrawer options;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
         powerButton = (ImageButton)findViewById(R.id.power_button);
         lightButton = (ImageButton)findViewById(R.id.light_button);
         videoButton = (ImageButton)findViewById(R.id.video_button);
+        nightButton = (ImageButton)findViewById(R.id.night_button);
         drawerButton = (ImageButton)findViewById(R.id.handle);
         options = (SlidingDrawer)findViewById(R.id.slidingDrawer);
         upButton.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +85,13 @@ public class MainActivity extends Activity {
                 //video button clicked
             }
         });
+        nightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //video button clicked
+            }
+        });
+
         drawerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,13 +101,13 @@ public class MainActivity extends Activity {
         options.setOnDrawerOpenListener(new SlidingDrawer.OnDrawerOpenListener() {
             @Override
             public void onDrawerOpened() {
-                drawerButton.setImageResource(R.drawable.down);
+                drawerButton.setImageResource(R.drawable.down_button);
             }
         });
         options.setOnDrawerCloseListener(new SlidingDrawer.OnDrawerCloseListener() {
             @Override
             public void onDrawerClosed() {
-                drawerButton.setImageResource(R.drawable.up);
+                drawerButton.setImageResource(R.drawable.up_button);
             }
         });
     }
