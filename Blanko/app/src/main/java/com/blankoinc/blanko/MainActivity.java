@@ -8,10 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.SlidingDrawer;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    ImageButton upButton, downButton, leftButton, rightButton;
+    ImageButton upButton, downButton, leftButton, rightButton,
+            laserButton, dockingButton, powerButton, lightButton, videoButton, drawerButton;
+    SlidingDrawer options;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +23,13 @@ public class MainActivity extends Activity {
         downButton = (ImageButton) findViewById(R.id.down_button);
         leftButton = (ImageButton) findViewById(R.id.left_button);
         rightButton = (ImageButton) findViewById(R.id.right_button);
+        laserButton = (ImageButton) findViewById(R.id.laser_button);
+        dockingButton = (ImageButton)findViewById(R.id.docking_button);
+        powerButton = (ImageButton)findViewById(R.id.power_button);
+        lightButton = (ImageButton)findViewById(R.id.light_button);
+        videoButton = (ImageButton)findViewById(R.id.video_button);
+        drawerButton = (ImageButton)findViewById(R.id.handle);
+        options = (SlidingDrawer)findViewById(R.id.slidingDrawer);
         upButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +52,54 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //right button clicked
+            }
+        });
+        laserButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //laser button clicked
+            }
+        });
+        dockingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //docking button clicked
+            }
+        });
+        powerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //power button clicked
+            }
+        });
+        lightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //light button clicked
+            }
+        });
+        videoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //video button clicked
+            }
+        });
+        drawerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        options.setOnDrawerOpenListener(new SlidingDrawer.OnDrawerOpenListener() {
+            @Override
+            public void onDrawerOpened() {
+                drawerButton.setImageResource(R.drawable.down);
+            }
+        });
+        options.setOnDrawerCloseListener(new SlidingDrawer.OnDrawerCloseListener() {
+            @Override
+            public void onDrawerClosed() {
+                drawerButton.setImageResource(R.drawable.up);
             }
         });
     }
