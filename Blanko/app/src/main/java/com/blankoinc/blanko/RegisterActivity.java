@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.app.Activity;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,13 +27,24 @@ public class RegisterActivity extends Activity {
         email   = (EditText)findViewById(R.id.Email);
         pass    = (EditText)findViewById(R.id.Pass);
         robonum   = (EditText)findViewById(R.id.Robonum);
-        signUpButton.setOnClickListener(new View.OnClickListener() {
+
+        signUpButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                signUp();
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN)
+                {
+                    signUpButton.setImageResource(R.drawable.sign_up_clicked);
+                }
+                else if(event.getAction() == MotionEvent.ACTION_UP)
+                {
+                    signUpButton.setImageResource(R.drawable.sign_up_button);
+                    signUp();
+                }
+                return true;
             }
         });
     }
+
 
     public void signUp(){
         //all code for registering goes in here
@@ -63,17 +75,17 @@ public class RegisterActivity extends Activity {
         }
         if (robonumString.trim().length() <=0)
         {
-            createDialog("Please Enter your Robot's ID Number");
+            createDialog("Enter your Robot's ID Number");
             inputValid = false;
         }
         if (!isValidEmail(emailString.trim())) //check if email is invalid validEmail function
         {
-            createDialog("Sorry, You Have Entered an Invalid Email Address!");
+            createDialog("Invalid Email Address!");
             inputValid = false;
         }
         if (nameString.trim().length() <=5) //check if name is valid only has to be 5 or more chars
         {
-            createDialog("Sorry, Your User Name must be at least 5 characters long!");
+            createDialog("Name Must be at least 5 characters!");
             inputValid = false;
         }
         if (isValidPassword(passString.trim())) //check if password is valid passwordValid function
@@ -83,7 +95,7 @@ public class RegisterActivity extends Activity {
         }
         if (robonumString.trim().length() <10) //is going to be a 10 char number
         {
-            createDialog("Please Enter your Robot's full ID Number");
+            createDialog("Robot ID must be 10 characters");
             inputValid = false;
         }
         return inputValid;
@@ -95,7 +107,7 @@ public class RegisterActivity extends Activity {
         TextView text = (TextView)dialog.findViewById(R.id.text);
         text.setText(message);
         ImageView image = (ImageView)dialog.findViewById(R.id.image);
-        image.setImageResource(R.drawable.ic_launcher);
+        image.setImageResource(R.drawable.head);
         Button dialogButton = (Button)dialog.findViewById(R.id.dialogButtonOK);
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override

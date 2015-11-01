@@ -35,6 +35,7 @@ public class WelcomeActivity extends Activity {
                 signUp();
             }
         });
+
     }
     public void signIn() {
         if (emailString == null || passString == null)
@@ -79,7 +80,7 @@ public class WelcomeActivity extends Activity {
         TextView text = (TextView)dialog.findViewById(R.id.text);
         text.setText(message);
         ImageView image = (ImageView)dialog.findViewById(R.id.image);
-        image.setImageResource(R.drawable.ic_launcher);
+        image.setImageResource(R.drawable.head);
         Button dialogButton = (Button)dialog.findViewById(R.id.dialogButtonOK);
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override

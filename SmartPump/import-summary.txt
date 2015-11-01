@@ -1,0 +1,159 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* Smart Pump Diagram.ucls
+* build.xml
+* doc/
+* doc/allclasses-frame.html
+* doc/allclasses-noframe.html
+* doc/com/
+* doc/com/project/
+* doc/com/project/classes/
+* doc/com/project/classes/DatabaseAccess.html
+* doc/com/project/classes/Vehicle.html
+* doc/com/project/classes/class-use/
+* doc/com/project/classes/class-use/DatabaseAccess.html
+* doc/com/project/classes/class-use/Vehicle.html
+* doc/com/project/classes/package-frame.html
+* doc/com/project/classes/package-summary.html
+* doc/com/project/classes/package-tree.html
+* doc/com/project/classes/package-use.html
+* doc/com/project/smartpump/
+* doc/com/project/smartpump/BuildConfig.html
+* doc/com/project/smartpump/CarInfoActivity.html
+* doc/com/project/smartpump/MainActivity.html
+* doc/com/project/smartpump/MapActivity.html
+* doc/com/project/smartpump/ProfileDatabaseContract.ProfileEntry.html
+* doc/com/project/smartpump/ProfileDatabaseContract.html
+* doc/com/project/smartpump/ProfileDatabaseHelper.html
+* doc/com/project/smartpump/R.attr.html
+* doc/com/project/smartpump/R.dimen.html
+* doc/com/project/smartpump/R.drawable.html
+* doc/com/project/smartpump/R.html
+* doc/com/project/smartpump/R.id.html
+* doc/com/project/smartpump/R.layout.html
+* doc/com/project/smartpump/R.menu.html
+* doc/com/project/smartpump/R.string.html
+* doc/com/project/smartpump/R.style.html
+* doc/com/project/smartpump/class-use/
+* doc/com/project/smartpump/class-use/BuildConfig.html
+* doc/com/project/smartpump/class-use/CarInfoActivity.html
+* doc/com/project/smartpump/class-use/MainActivity.html
+* doc/com/project/smartpump/class-use/MapActivity.html
+* doc/com/project/smartpump/class-use/ProfileDatabaseContract.ProfileEntry.html
+* doc/com/project/smartpump/class-use/ProfileDatabaseContract.html
+* doc/com/project/smartpump/class-use/ProfileDatabaseHelper.html
+* doc/com/project/smartpump/class-use/R.attr.html
+* doc/com/project/smartpump/class-use/R.dimen.html
+* doc/com/project/smartpump/class-use/R.drawable.html
+* doc/com/project/smartpump/class-use/R.html
+* doc/com/project/smartpump/class-use/R.id.html
+* doc/com/project/smartpump/class-use/R.layout.html
+* doc/com/project/smartpump/class-use/R.menu.html
+* doc/com/project/smartpump/class-use/R.string.html
+* doc/com/project/smartpump/class-use/R.style.html
+* doc/com/project/smartpump/package-frame.html
+* doc/com/project/smartpump/package-summary.html
+* doc/com/project/smartpump/package-tree.html
+* doc/com/project/smartpump/package-use.html
+* doc/constant-values.html
+* doc/deprecated-list.html
+* doc/help-doc.html
+* doc/index-files/
+* doc/index-files/index-1.html
+* doc/index-files/index-10.html
+* doc/index-files/index-11.html
+* doc/index-files/index-12.html
+* doc/index-files/index-13.html
+* doc/index-files/index-14.html
+* doc/index-files/index-15.html
+* doc/index-files/index-16.html
+* doc/index-files/index-17.html
+* doc/index-files/index-2.html
+* doc/index-files/index-3.html
+* doc/index-files/index-4.html
+* doc/index-files/index-5.html
+* doc/index-files/index-6.html
+* doc/index-files/index-7.html
+* doc/index-files/index-8.html
+* doc/index-files/index-9.html
+* doc/index.html
+* doc/overview-frame.html
+* doc/overview-summary.html
+* doc/overview-tree.html
+* doc/package-list
+* doc/resources/
+* doc/resources/background.gif
+* doc/resources/tab.gif
+* doc/resources/titlebar.gif
+* doc/resources/titlebar_end.gif
+* doc/stylesheet.css
+* ic_launcher-web.old.png
+* ic_launcher-web.png
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.1.0
+
+Replaced Libraries with Dependencies:
+-------------------------------------
+The importer recognized the following library projects as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the source files in your project were of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the library replacement in the import wizard and try
+again:
+
+google-play-services_lib => [com.google.android.gms:play-services:+]
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app/src/main/AndroidManifest.xml
+* libs/json-simple-1.1.1.jar => app/libs/json-simple-1.1.1.jar
+* lint.xml => app/lint.xml
+* res/ => app/src/main/res/
+* src/ => app/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

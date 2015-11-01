@@ -120,7 +120,7 @@ public class MainActivity extends Activity {
             TextView text = (TextView)dialog.findViewById(R.id.text);
             text.setText("Are you sure you want to log out?");
             ImageView image = (ImageView)dialog.findViewById(R.id.image);
-            image.setImageResource(R.drawable.ic_launcher);
+            image.setImageResource(R.drawable.head);
             Button dialogButtonOk = (Button)dialog.findViewById(R.id.dialogButtonOK);
             Button dialogButtonCancel = (Button)dialog.findViewById(R.id.dialogButtonCancel);
             dialogButtonOk.setOnClickListener(new View.OnClickListener() {
