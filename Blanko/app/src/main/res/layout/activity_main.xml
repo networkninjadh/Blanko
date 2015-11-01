@@ -71,7 +71,7 @@
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#ff82abb3"
+            android:background="#cd327880"
             android:orientation="horizontal"
             android:gravity="center">
             <ImageButton
