@@ -144,13 +144,12 @@ public class MainActivity extends Activity {
             }
         });
 
-
         drawerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });
+
         options.setOnDrawerOpenListener(new SlidingDrawer.OnDrawerOpenListener() {
             @Override
             public void onDrawerOpened() {
