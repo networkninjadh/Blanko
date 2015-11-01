@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,19 +24,36 @@ public class WelcomeActivity extends Activity {
         signUpButton = (ImageButton) findViewById(R.id.sign_up_button);
         email   = (EditText)findViewById(R.id.Email);
         pass    = (EditText)findViewById(R.id.Pass);
-        signInButton.setOnClickListener(new View.OnClickListener() {
+        /*signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signIn();
             }
-        });
-        signUpButton.setOnClickListener(new View.OnClickListener() {
+        });*/
+        signInButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                signUp();
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    signInButton.setImageResource(R.drawable.sign_in_clicked);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    signInButton.setImageResource(R.drawable.sign_in_button);
+                    signIn();
+                }
+                return true;
             }
         });
-
+        signUpButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    signUpButton.setImageResource(R.drawable.sign_up_clicked);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    signUpButton.setImageResource(R.drawable.sign_up_button);
+                    signUp();
+                }
+                return true;
+            }
+        });
     }
     public void signIn() {
         if (emailString == null || passString == null)

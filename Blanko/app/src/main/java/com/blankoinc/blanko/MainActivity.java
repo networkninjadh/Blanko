@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -31,66 +32,118 @@ public class MainActivity extends Activity {
         nightButton = (ImageButton)findViewById(R.id.night_button);
         drawerButton = (ImageButton)findViewById(R.id.handle);
         options = (SlidingDrawer)findViewById(R.id.slidingDrawer);
-        upButton.setOnClickListener(new View.OnClickListener() {
+
+        upButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                //up Button clicked
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    upButton.setImageResource(R.drawable.up_clicked);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    upButton.setImageResource(R.drawable.up_button);
+                }
+                return true;
             }
         });
-        downButton.setOnClickListener(new View.OnClickListener() {
+        downButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                //down button clicked
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    downButton.setImageResource(R.drawable.down_clicked);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    downButton.setImageResource(R.drawable.down_button);
+                }
+                return true;
             }
         });
-        leftButton.setOnClickListener(new View.OnClickListener() {
+        leftButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                //left button clicked
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    leftButton.setImageResource(R.drawable.left_clicked);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    leftButton.setImageResource(R.drawable.left_button);
+                }
+                return true;
             }
         });
-        rightButton.setOnClickListener(new View.OnClickListener() {
+        rightButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                //right button clicked
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    rightButton.setImageResource(R.drawable.right_clicked);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    rightButton.setImageResource(R.drawable.right_button);
+                }
+                return true;
             }
         });
-        laserButton.setOnClickListener(new View.OnClickListener() {
+        laserButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                //laser button clicked
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    laserButton.setImageResource(R.drawable.laser_clicked);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    laserButton.setImageResource(R.drawable.laser_button);
+                }
+                return true;
             }
         });
-        dockingButton.setOnClickListener(new View.OnClickListener() {
+        dockingButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                //docking button clicked
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    dockingButton.setImageResource(R.drawable.docking_clicked);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    dockingButton.setImageResource(R.drawable.docking_button);
+                }
+                return true;
             }
         });
-        powerButton.setOnClickListener(new View.OnClickListener() {
+        powerButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                //power button clicked
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    powerButton.setImageResource(R.drawable.power_clicked);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    powerButton.setImageResource(R.drawable.power_button);
+                }
+                return true;
             }
         });
-        lightButton.setOnClickListener(new View.OnClickListener() {
+        lightButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                //light button clicked
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    lightButton.setImageResource(R.drawable.light_clicked);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    lightButton.setImageResource(R.drawable.light_button);
+                }
+                return true;
             }
         });
-        videoButton.setOnClickListener(new View.OnClickListener() {
+        videoButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                //video button clicked
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    videoButton.setImageResource(R.drawable.video_clicked);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    videoButton.setImageResource(R.drawable.video_button);
+                }
+                return true;
             }
         });
-        nightButton.setOnClickListener(new View.OnClickListener() {
+        nightButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                //video button clicked
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    nightButton.setImageResource(R.drawable.night_clicked);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    nightButton.setImageResource(R.drawable.night_button);
+                }
+                return true;
             }
         });
+
 
         drawerButton.setOnClickListener(new View.OnClickListener() {
             @Override

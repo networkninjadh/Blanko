@@ -58,24 +58,19 @@ public class RegisterActivity extends Activity {
         passString = pass.getText().toString();
         robonumString = robonum.getText().toString();
         boolean inputValid = true;
-        if (emailString.trim().length() <=0)
-        {
-            createDialog("Please Enter an Email!");
-            inputValid = false;
-        }
         if (nameString.trim().length() <=0)
         {
             createDialog("Please Enter Your Name!");
             inputValid = false;
         }
-        if (passString.trim().length() <=0)
+        if (nameString.trim().length() <=5) //check if name is valid only has to be 5 or more chars
         {
-            createDialog("Please Enter a Password!");
+            createDialog("Name Must be at least 5 Characters!");
             inputValid = false;
         }
-        if (robonumString.trim().length() <=0)
+        if (emailString.trim().length() <=0)
         {
-            createDialog("Enter your Robot's ID Number");
+            createDialog("Please Enter an Email!");
             inputValid = false;
         }
         if (!isValidEmail(emailString.trim())) //check if email is invalid validEmail function
@@ -83,14 +78,19 @@ public class RegisterActivity extends Activity {
             createDialog("Invalid Email Address!");
             inputValid = false;
         }
-        if (nameString.trim().length() <=5) //check if name is valid only has to be 5 or more chars
+        if (passString.trim().length() <=0)
         {
-            createDialog("Name Must be at least 5 characters!");
+            createDialog("Please Enter a Password!");
             inputValid = false;
         }
         if (isValidPassword(passString.trim())) //check if password is valid passwordValid function
         {
             createDialog("Please Enter a Valid Password!");
+            inputValid = false;
+        }
+        if (robonumString.trim().length() <=0)
+        {
+            createDialog("Enter your Robot's ID Number");
             inputValid = false;
         }
         if (robonumString.trim().length() <10) //is going to be a 10 char number
