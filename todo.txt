@@ -1,1 +1,6 @@
-android app can record the video stream and save it
+1 finish the main layout
+2 connect to arduino shield in order to send commands 
+3 android app can record the video stream and save it
+4 connect to ip camera to get video feed and stream it into the videoview
+5 connect to mysql database so that login can work
+6 create an animation where ever button comes up seperately and goes down in the reverse order
