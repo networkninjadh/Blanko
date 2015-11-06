@@ -2,6 +2,8 @@ package com.blankoinc.blanko;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.media.session.MediaController;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -11,11 +13,20 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SlidingDrawer;
 import android.widget.TextView;
+import android.widget.VideoView;
+
+//import com.blankoinc.communications.VideoStream;
+
 
 public class MainActivity extends Activity {
     ImageButton upButton, downButton, leftButton, rightButton,
             laserButton, dockingButton, powerButton, lightButton, videoButton, nightButton, drawerButton;
     SlidingDrawer options;
+    VideoView cameraStream;
+    MediaController mediaController;
+    //VideoStream Foscam;
+    String Video = "http://192.168.1.18/videoStream.cgi?cmd=GetMJStream&usr=blanko&pwd=password1";
+    Uri videoUri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +44,9 @@ public class MainActivity extends Activity {
         drawerButton = (ImageButton)findViewById(R.id.handle);
         options = (SlidingDrawer)findViewById(R.id.slidingDrawer);
 
+        videoUri = Uri.parse(Video);
+        cameraStream.setVideoURI(videoUri);
+        cameraStream.start();
         upButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
