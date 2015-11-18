@@ -118,9 +118,4 @@
                 android:layout_height="70dp"/>
         </LinearLayout>
     </SlidingDrawer>
-
-
-
-
-
 </FrameLayout>

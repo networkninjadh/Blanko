@@ -23,15 +23,19 @@ public class VideoStream {
         if (capture.open(videoURL))
             return true;
         else
+        Log.v(TAG,"Failed setting up stream");
             return false;
     }
 
     public Mat getNextFrame()
     {
-        if (capture.read(frame))
-            return frame;
-        else
-            Log.v(TAG,"Failed getting last frame" );
-        return null;
+      while(true) {
+          if (capture.read(frame))
+              return frame;
+          else {
+              Log.v(TAG, "Failed getting last frame");
+              return null;
+          }
+      }
     }
 }
