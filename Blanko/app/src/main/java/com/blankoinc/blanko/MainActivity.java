@@ -2,6 +2,7 @@ package com.blankoinc.blanko;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -17,19 +18,17 @@ import android.widget.VideoView;
 
 import com.blankoinc.communications.VideoStream;
 
-
 public class MainActivity extends Activity {
     ImageButton upButton, downButton, leftButton, rightButton,
             laserButton, dockingButton, powerButton, lightButton, videoButton, nightButton, drawerButton;
     SlidingDrawer options;
     VideoView videoView;
     WebView webView;
-    //VideoStream Foscam = new VideoStream("http://10.0.0.25/videoStream.cgi?usr=blanko&pwd=password1");
+    VideoStream Foscam = new VideoStream("http://10.0.0.25/videostream.cgi?user=blanko&pwd=password1"); //holds all info about the camera and stream as well as issuing commands to the camera some stuff held in settings
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2);
-       // setContentView(R.layout.activity_main);
         upButton = (ImageButton) findViewById(R.id.up_button);
         downButton = (ImageButton) findViewById(R.id.down_button);
         leftButton = (ImageButton) findViewById(R.id.left_button);
@@ -45,15 +44,9 @@ public class MainActivity extends Activity {
         videoView = (VideoView) findViewById(R.id.videoView);
         webView = (WebView)findViewById(R.id.webView);
 
-        //try webview
         webView.setBackgroundColor(Color.BLACK);
-        webView.loadUrl("http://10.0.0.25/videostream.cgi?cmd=GetMJStream&user=blanko&pwd=password1");
-        ///code for playing video///////////////////////////////////////////////////////////////////
-        //videoView.setVideoPath("http://10.0.0.25/videoStream.cgi?usr=blanko&pwd=password1?dummy=video.mjpg  ");
-        //videoView.start();
-        //Foscam.setUpStream();
-        //Foscam.getNextFrame();
-        ////////////////////////////////////////////////////////////////////////////////////////////
+        webView.loadUrl(Foscam.getStreamURL());
+
         upButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -148,8 +141,10 @@ public class MainActivity extends Activity {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     videoButton.setImageResource(R.drawable.video_clicked);
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    webView.loadUrl("http://10.0.0.25/reboot.cgi?user=blanko&pwd=password1");
                     videoButton.setImageResource(R.drawable.video_button);
                 }
+                //webView.loadUrl("http://10.0.0.25/videostream.cgi?user=blanko&pwd=password1");
                 return true;
             }
         });
@@ -214,5 +209,10 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+    public void settings()
+    {
+        Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+        startActivity(intent);
     }
 }

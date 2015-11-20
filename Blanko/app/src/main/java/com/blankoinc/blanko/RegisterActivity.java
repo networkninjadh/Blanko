@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.blankoinc.communications.Settings;
+
 public class RegisterActivity extends Activity {
 
     ImageButton signUpButton;
@@ -124,6 +126,7 @@ public class RegisterActivity extends Activity {
         return !TextUtils.isEmpty(target);
     }
     public boolean registerUser(String name, String pass, String email, String robonum){
+        Settings appUserSettings = new Settings(name, email, pass, robonum);
         boolean success = true;
         return success;
     }

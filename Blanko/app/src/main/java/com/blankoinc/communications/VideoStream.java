@@ -1,41 +1,35 @@
 package com.blankoinc.communications;
 
-import android.util.Log;
+import android.webkit.WebView;
 
-import org.opencv.core.Mat;
-import org.opencv.videoio.VideoCapture;
+import com.blankoinc.blanko.R;
 
 /**
  * Created by dhoward on 11/4/15.
  */
 
 public class VideoStream {
-    private VideoCapture capture;
     private String videoURL;
-    private Mat frame;
-    private static final String TAG = "VIDEOSTREAM";
-    public VideoStream(String videoURL) {
+
+    public VideoStream(String videoURL)
+    {
         this.videoURL = videoURL;
     }
-    public boolean setUpStream()
+
+    public void runCommand(String command, WebView view)
     {
-        capture = new VideoCapture();
-        if (capture.open(videoURL))
-            return true;
-        else
-        Log.v(TAG,"Failed setting up stream");
-            return false;
+
     }
 
-    public Mat getNextFrame()
+    public void setStreamURL(String URL)
     {
-      while(true) {
-          if (capture.read(frame))
-              return frame;
-          else {
-              Log.v(TAG, "Failed getting last frame");
-              return null;
-          }
-      }
+        videoURL = URL;
     }
+
+    public String getStreamURL()
+    {
+        return videoURL;
+    }
+
+
 }

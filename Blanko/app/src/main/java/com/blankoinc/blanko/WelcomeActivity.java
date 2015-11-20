@@ -24,12 +24,7 @@ public class WelcomeActivity extends Activity {
         signUpButton = (ImageButton) findViewById(R.id.sign_up_button);
         email   = (EditText)findViewById(R.id.Email);
         pass    = (EditText)findViewById(R.id.Pass);
-        /*signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signIn();
-            }
-        });*/
+
         signInButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
