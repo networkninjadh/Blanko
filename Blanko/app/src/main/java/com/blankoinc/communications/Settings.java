@@ -16,6 +16,8 @@ public class Settings {
     private String cameraIP;
     private String cameraUserName;
     private String cameraPassword;
+    // Arduino Settings
+    private String arduinoIp;
 
     //Constructors/////////////////////////
     public Settings(){}
@@ -85,5 +87,14 @@ public class Settings {
     public void setEmailAddress(String email)
     {
         this.emailAddress = email;
+    }
+    // Arduino settings
+    public String getArduinoIp()
+    {
+        return this.arduinoIp;
+    }
+    public void setArduinoIp(String ip)
+    {
+        this.arduinoIp = ip;
     }
 }
