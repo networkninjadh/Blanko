@@ -2,6 +2,7 @@ package com.blankoinc.blanko;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,14 +28,17 @@ public class SettingsActivity extends Activity
             @Override
             public void onClick(View v) {
                 //todo check the settings in the boxes then save all settings to disk
-
+                /*
                 if(checkInput())
                 {
                     applicationSettings.setCameraIP(ipAddress.getText().toString());
                     applicationSettings.setCameraUserName(user.getText().toString());
                     applicationSettings.setCameraPassword(pass.getText().toString());
                     applicationSettings.setArduinoIp(ipAddress2.getText().toString());
-                }
+                }*/
+                Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
         cancelButton.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +46,10 @@ public class SettingsActivity extends Activity
             public void onClick(View v) {
 
                 //Todo clear out all the boxes
+                ipAddress2.getText().clear();
+                ipAddress.getText().clear();
+                user.getText().clear();
+                pass.getText().clear();
             }
         });
     }

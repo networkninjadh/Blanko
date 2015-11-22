@@ -2,39 +2,70 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:background="@android:color/holo_blue_bright"
+    >
      <TextView android:layout_width="match_parent"
                android:layout_height="0dp"
-               android:layout_weight=".5"
+               android:layout_weight=".4"
+               android:gravity="center"
                android:text="IP Camera Settings"
+               android:layout_marginRight="16dp"
+               android:layout_marginLeft="16dp"
+
 
          />
     <EditText android:id="@+id/ipAddress"
               android:layout_width="match_parent"
               android:layout_height="0dp"
               android:layout_weight="1"
+              android:gravity="center"
               android:hint="[IP Address]"
+              android:layout_marginRight="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginTop="16dp"
+              android:layout_marginBottom="16dp"
         />
     <EditText android:id="@+id/user"
               android:layout_width="match_parent"
               android:layout_height="0dp"
               android:layout_weight="1"
-              android:hint="[User Name]"/>
+              android:gravity="center"
+              android:hint="[User Name]"
+              android:layout_marginRight="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginTop="16dp"
+              android:layout_marginBottom="16dp"
+        />
     <EditText android:id="@+id/pass"
               android:layout_width="match_parent"
               android:layout_height="0dp"
               android:layout_weight="1"
-              android:hint="[Password]"/>
+              android:gravity="center"
+              android:hint="[Password]"
+              android:layout_marginRight="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginTop="16dp"
+              android:layout_marginBottom="16dp"
+        />
     <TextView android:layout_width="match_parent"
               android:layout_height="0dp"
-              android:layout_weight=".5"
+              android:layout_weight=".4"
+              android:gravity="center"
               android:text="Arduino WI-FI Shield Settings"
+              android:layout_marginRight="16dp"
+              android:layout_marginLeft="16dp"
         />
     <EditText android:id="@+id/ipAddress2"
               android:layout_width="match_parent"
               android:layout_height="0dp"
               android:layout_weight="1"
+              android:gravity="center"
               android:hint="[IP Address]"
+              android:layout_marginRight="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginTop="16dp"
+              android:layout_marginBottom="16dp"
         />
     <LinearLayout android:orientation="horizontal"
                   android:layout_width="match_parent"
@@ -44,12 +75,21 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:text="Clear"/>
         <Button android:id="@+id/save"
                 android:text="Save"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+            />
 
     </LinearLayout>
 </LinearLayout>

@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SlidingDrawer;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.blankoinc.communications.VideoStream;
@@ -143,6 +144,7 @@ public class MainActivity extends Activity {
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     webView.loadUrl("http://10.0.0.25/reboot.cgi?user=blanko&pwd=password1");
                     videoButton.setImageResource(R.drawable.video_button);
+                    settings(); // start the settings activity
                 }
                 //webView.loadUrl("http://10.0.0.25/videostream.cgi?user=blanko&pwd=password1");
                 return true;
@@ -214,5 +216,6 @@ public class MainActivity extends Activity {
     {
         Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
         startActivity(intent);
+        finish();
     }
 }

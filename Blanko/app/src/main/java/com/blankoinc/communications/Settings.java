@@ -1,7 +1,5 @@
 package com.blankoinc.communications;
 
-import android.app.Application;
-
 /**
  * Created by dhoward on 11/18/15.
  */
@@ -31,12 +29,13 @@ public class Settings {
     public boolean saveAllSettings()
     {
         //TODO saves all settings to android storage
-        return true;
+
+        return true; //return true if settings were saved properly
     }
     public boolean loadAllSettings()
     {
         //TODO loads all settings at the start of application
-        return true;
+        return true; //return true if settings were loaded properly
     }
     public String getCameraIP()
     {
