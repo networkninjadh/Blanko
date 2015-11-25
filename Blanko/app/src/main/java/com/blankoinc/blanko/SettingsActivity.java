@@ -16,7 +16,7 @@ public class SettingsActivity extends Activity
 {
     Button saveButton, cancelButton;
     EditText ipAddress, user, pass, ipAddress2;
-    Settings applicationSettings;
+    Settings applicationSettings = new Settings();
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -28,14 +28,14 @@ public class SettingsActivity extends Activity
             @Override
             public void onClick(View v) {
                 //todo check the settings in the boxes then save all settings to disk
-                /*
                 if(checkInput())
                 {
                     applicationSettings.setCameraIP(ipAddress.getText().toString());
                     applicationSettings.setCameraUserName(user.getText().toString());
                     applicationSettings.setCameraPassword(pass.getText().toString());
                     applicationSettings.setArduinoIp(ipAddress2.getText().toString());
-                }*/
+                    applicationSettings.saveAllSettings();
+                }
                 Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();

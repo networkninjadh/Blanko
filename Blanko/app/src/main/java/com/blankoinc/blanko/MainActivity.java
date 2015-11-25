@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.blankoinc.communications.Settings;
 import com.blankoinc.communications.VideoStream;
 
 public class MainActivity extends Activity {
@@ -26,10 +27,12 @@ public class MainActivity extends Activity {
     VideoView videoView;
     WebView webView;
     VideoStream Foscam = new VideoStream("http://10.0.0.25/videostream.cgi?user=blanko&pwd=password1"); //holds all info about the camera and stream as well as issuing commands to the camera some stuff held in settings
+    Settings applicationSettings = new Settings();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2);
+        applicationSettings.loadAllSettings(); //load all of the settings from the file when the main activity is loaded in order to set them in this activity
         upButton = (ImageButton) findViewById(R.id.up_button);
         downButton = (ImageButton) findViewById(R.id.down_button);
         leftButton = (ImageButton) findViewById(R.id.left_button);
@@ -46,7 +49,7 @@ public class MainActivity extends Activity {
         webView = (WebView)findViewById(R.id.webView);
 
         webView.setBackgroundColor(Color.BLACK);
-        webView.loadUrl(Foscam.getStreamURL());
+        webView.loadUrl(Foscam.getVideoURL());
 
         upButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -142,8 +145,8 @@ public class MainActivity extends Activity {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     videoButton.setImageResource(R.drawable.video_clicked);
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    webView.loadUrl("http://10.0.0.25/reboot.cgi?user=blanko&pwd=password1");
-                    videoButton.setImageResource(R.drawable.video_button);
+                    webView.loadUrl("http://10.0.0.25/reboot.cgi?user=blanko&pwd=password1"); //url from my apartment will change this to load from applicationSettings
+                    videoButton.setImageResource(R.drawable.video_button);                    //also implement a way to reload the webview
                     settings(); // start the settings activity
                 }
                 //webView.loadUrl("http://10.0.0.25/videostream.cgi?user=blanko&pwd=password1");
