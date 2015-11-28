@@ -156,6 +156,13 @@ public class Settings {
     {
         this.emailAddress = email;
     }
+    public void setPassword(String pass)
+    {
+        this.password = pass;
+    }
+    public void setRobonum(String robonum){
+        this.robonum = robonum;
+    }
     // Arduino settings
     public String getArduinoIp()
     {
@@ -165,4 +172,5 @@ public class Settings {
     {
         this.arduinoIp = ip;
     }
+
 }
