@@ -126,12 +126,7 @@ public class RegisterActivity extends Activity {
         return !TextUtils.isEmpty(target);
     }
     public boolean registerUser(String name, String pass, String email, String robonum){
-        Settings appUserSettings = new Settings(); //name, email, pass, robonum,);
-        appUserSettings.setUserName(name);
-        appUserSettings.setPassword(pass);
-        appUserSettings.setEmailAddress(email);
-        appUserSettings.setRobonum(robonum);
-        appUserSettings.saveAllSettings();
+        Settings appUserSettings = new Settings(name, email, pass, robonum);
         boolean success = true;
         return success;
     }

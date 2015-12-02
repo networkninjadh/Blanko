@@ -53,7 +53,7 @@
     </FrameLayout>
 
     <SlidingDrawer
-        android:layout_width="450dp"
+        android:layout_width="500dp"
         android:layout_height="150dp"
         android:content="@+id/content"
         android:handle="@+id/handle"
@@ -75,12 +75,26 @@
             android:orientation="horizontal"
             android:gravity="center">
             <ImageButton
+                android:id="@+id/laser_downButton"
+                android:src="@drawable/down_button"
+                android:scaleType="centerInside"
+                android:background="@android:color/transparent"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+            <ImageButton
                 android:id="@+id/laser_button"
                 android:src="@drawable/laser_button"
                 android:scaleType="centerInside"
                 android:background="@android:color/transparent"
                 android:layout_width="70dp"
                 android:layout_height="70dp"/>
+            <ImageButton
+                android:id="@+id/laser_upButton"
+                android:src="@drawable/up_button"
+                android:scaleType="centerInside"
+                android:background="@android:color/transparent"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
             <ImageButton
                 android:id="@+id/docking_button"
                 android:src="@drawable/docking_button"

@@ -17,7 +17,7 @@ public class SplashActivity extends Activity {
         final ImageView splashScreen = (ImageView) findViewById(R.id.splashImage);
         splashScreen.setBackgroundResource(R.drawable.splash_animation_list);
         final AnimationDrawable splashAnimation = (AnimationDrawable) splashScreen.getBackground();
-        final MediaPlayer splashMediaPlayer = MediaPlayer.create(SplashActivity.this, R.raw.splash_sound); // just to show that we can have a sound here this will be replaced with final splash sound
+        final MediaPlayer splashMediaPlayer = MediaPlayer.create(SplashActivity.this, R.raw.startup_sound); // just to show that we can have a sound here this will be replaced with final splash sound
         Thread timerThread = new Thread()
         {
             public void run(){
